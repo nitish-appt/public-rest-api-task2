@@ -5,9 +5,10 @@ pipeline{
     }
     stages{
         stage('check out'){
-            
-                git branch: 'develop', url: 'https://github.com/nitish-appt/public-rest-api-task2.git'
+            steps{
                 echo 'checkout is done'
+                git branch: 'develop', url: 'https://github.com/nitish-appt/public-rest-api-task2.git'   
+            }
             }
         
         stage('build trigger'){
