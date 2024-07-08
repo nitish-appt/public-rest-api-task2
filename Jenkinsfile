@@ -4,10 +4,23 @@ pipeline{
         cron('H */4 * * 1-5')
     }
     stages{
-        stage('build trigger'){
+        stage('check out'){
             steps{
-                echo 'nitish'
+                git branch: 'develop', url: 'https://github.com/nitish-appt/public-rest-api-task2.git'
+                echo 'checkout is done'
             }
         }
+        stage('build trigger'){
+            steps{
+                sh 'docker compose build'
+                sh 'docker compose up'
+            }
+        }
+        stage('test'){
+            steps{
+                
+            }
+        }
+        
     }
 }
