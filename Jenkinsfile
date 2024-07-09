@@ -15,6 +15,8 @@ pipeline{
                 sh 'docker compose up'
             }
         }
+
+        
         stage('test'){
             steps{
                 echo 'text it'
