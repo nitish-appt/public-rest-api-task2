@@ -23,7 +23,7 @@ pipeline{
             steps {
                 script {
                     withSonarQubeEnv('sonar') {
-                        sh "${scannerHome}/bin/sonar-scanner \
+                        sh "${scannerHome}/bin/sonar \
                             -Dsonar.projectKey=project2 \
                             -Dsonar.projectName=project2 \
                             -Dsonar.projectVersion=1.0 \
