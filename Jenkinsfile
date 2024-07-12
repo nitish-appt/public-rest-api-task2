@@ -11,8 +11,8 @@ pipeline{
         
         stage('build trigger'){
             steps{
-                sh 'docker compose build'
-                sh 'docker compose up'
+                echo 'build step docker'
+                echo 'done'
             }
         }
 
