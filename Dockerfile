@@ -14,8 +14,6 @@ COPY . .
 EXPOSE 5000 
 # Command to run the app 
 
-
-
 # FROM node:18.9.0 as build3 
 # WORKDIR /app2 
 # COPY --from=build1 /app/dist /app2/dist 
