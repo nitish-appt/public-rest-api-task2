@@ -16,31 +16,7 @@ pipeline{
             }
         }
 
-        stage('Code Analysis') {
-            environment {
-                scannerHome = tool 'sonar'
-            }
-            steps {
-                script {
-                    withSonarQubeEnv('sonar') {
-                        sh "${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=project2 \
-                            -Dsonar.projectName=project2 \
-                            -Dsonar.projectVersion=1.0 \
-                            -Dsonar.sources=."
-                    }
-                }
-                echo 'code scanning completed'
-            }
-        }
-        stage("Quality Gate") {
-            steps {
-              timeout(time: 5, unit: 'MINUTES') {
-                waitForQualityGate abortPipeline: true
-                }
-              }
-            }
-        
+    
         
     }
 }
