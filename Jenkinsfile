@@ -15,6 +15,22 @@ pipeline{
                 echo 'done'
             }
         }
+        stage('Code Analysis') {
+            environment {
+                scannerHome = tool 'sonar'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sonar') {
+                        sh "${scannerHome}/bin/sonar \
+                            -Dsonar.projectKey=project-finalcheck \
+                            -Dsonar.projectName=project-finalcheck \
+                            -Dsonar.projectVersion=1.0 \
+                            -Dsonar.sources=."
+                    }
+                }
+            }
+        }
 
     
         
