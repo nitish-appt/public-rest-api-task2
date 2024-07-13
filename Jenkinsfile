@@ -17,12 +17,12 @@ pipeline{
         }
         stage('Code Analysis') {
             environment {
-                scannerHome = tool 'sonar'
+                scannerHome = tool 'Sonar'
             }
             steps {
                 script {
-                    withSonarQubeEnv('sonar') {
-                        sh "${scannerHome}/bin/sonar \
+                    withSonarQubeEnv('Sonar') {
+                        sh "${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=project-finalcheck \
                             -Dsonar.projectName=project-finalcheck \
                             -Dsonar.projectVersion=1.0 \
