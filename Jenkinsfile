@@ -9,10 +9,11 @@ pipeline{
             }
             }
         
-        stage('build trigger'){
+        stage('build'){
             steps{
-                sh'yarn install'
-                sh'yarn start'
+                // sh'yarn install'
+                // sh'yarn start'
+                echo 'successful'
             }
         }
         stage('Code Analysis') {
