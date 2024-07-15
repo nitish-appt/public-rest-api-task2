@@ -11,8 +11,8 @@ pipeline{
         
         stage('build trigger'){
             steps{
-                echo 'build step docker'
-                echo 'done'
+                sh'pnpm install'
+                sh'pnpm start'
             }
         }
         stage('Code Analysis') {
