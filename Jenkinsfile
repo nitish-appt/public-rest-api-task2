@@ -11,8 +11,8 @@ pipeline{
         
         stage('build trigger'){
             steps{
-                sh'pnpm install'
-                sh'pnpm start'
+                sh'yarn install'
+                sh'yarn start'
             }
         }
         stage('Code Analysis') {
